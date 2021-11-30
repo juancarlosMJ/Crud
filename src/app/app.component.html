@@ -13,6 +13,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
+            <h3>Bienvenido!</h3>
             <table  border="1"  class="table table-dark table-borderless">
                 <thead>
                     <th>ID</th>
@@ -35,25 +36,30 @@
             </tr>
             </tbody>
             </table>
-            <hr>
-            <p>
-                <label for="id">ID</label>
-                <input  class="form-control" required type="number"[(ngModel)]="formulario.id">
-            
-            </p>
-            <p>
-                <label for="Nombre">Nombre</label>
-                <input  class="form-control" required type="text"[(ngModel)]="formulario.nombre">
-            </p>
-            <p>
-                <label for="Precio">Precio</label>
-                <input class="form-control" required type="number"[(ngModel)]="formulario.precio">
-            
-            </p>
-            <button  class="btn btn-success mr-2" (click)="agregar()">Agregar</button>
-            <button class="m-3 btn btn-sm btn-danger mr-2" (click)="editar()">Editar</button>
-
-            
+            <div class="card">
+                <div class="card-header">
+                <p>Agrege el siguiente articulo</p>
+                </div>
+                <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <label for="id">ID</label>
+                        <input  class="form-control" required type="number"[(ngModel)]="formulario.id">
+                    </div>
+                    <div class="col">
+                        <label for="Nombre">Nombre</label>
+                        <input  class="form-control" required type="text"[(ngModel)]="formulario.nombre">
+                        </div>
+                        <div class="col">
+                        <label for="Precio">Precio</label>
+                        <input class="form-control" required type="number"[(ngModel)]="formulario.precio">
+                        </div>
+                        
+                    </div>
+                    <button  class="btn btn-success mr-2" (click)="agregar()">Agregar</button>
+            <button class="m-3 btn btn-sm btn-danger mr-3" (click)="editar()">Editar</button>
+                </div>
+                </div>
         </div>
     </div>
 </div>
