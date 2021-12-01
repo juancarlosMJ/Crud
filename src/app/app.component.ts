@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { iif } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -38,11 +37,19 @@ export class AppComponent {
     let datoNuevo = {
       id : this.formulario.id,
       nombre : this.formulario.nombre,
-      precio : this.formulario.precio
+      precio : this.formulario.precio,
+      
     };
     this.inventario.push(datoNuevo);
+    this.limpiar();
     alert("agregado con exito");
     
+
+  }
+  public limpiar() : void{
+        this.formulario.id=null;
+        this.formulario.nombre=null;
+        this.formulario.precio=null;
   }
   public editar() : void{
     for (let index = 0; index < this.inventario.length; index++) {
@@ -50,6 +57,7 @@ export class AppComponent {
         this.inventario[index].id = this.formulario.id;
         this.inventario[index].nombre = this.formulario.nombre;
         this.inventario[index].precio = this.formulario.precio;
+        this.limpiar();
         alert("Modificado con exito");
         break;
         
